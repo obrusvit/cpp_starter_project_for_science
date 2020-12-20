@@ -72,6 +72,11 @@ if(CPP_STARTER_USE_SDL)
   # set(CONAN_EXTRA_OPTIONS ${CONAN_EXTRA_OPTIONS} sdl2:wayland=True)
 endif()
 
+if(CPP_STARTER_USE_EIGEN)
+    set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES} eigen/3.3.7@conan/stable)
+endif()
+
+
 include(cmake/Conan.cmake)
 run_conan()
 

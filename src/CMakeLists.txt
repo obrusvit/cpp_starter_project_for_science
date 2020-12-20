@@ -4,6 +4,9 @@ option(CPP_STARTER_USE_GTKMM "Enable compilation of GTKMM sample" OFF)
 option(CPP_STARTER_USE_IMGUI "Enable compilation of ImGui sample" OFF)
 option(CPP_STARTER_USE_NANA "Enable compilation of Nana GUI sample" OFF)
 option(CPP_STARTER_USE_SDL "Enable compilation of SDL sample" OFF)
+option(CPP_STARTER_USE_EIGEN "Enable compilation of Eigen sample" OFF)
+option(CPP_STARTER_USE_MATPLOT "Enable compilation of Matplotplusplus sample" OFF)
+
 
 # sdl
 if(CPP_STARTER_USE_SDL)
@@ -40,6 +43,19 @@ if(CPP_STARTER_USE_NANA)
   message("Using Nana")
   add_subdirectory(nana)
 endif()
+
+# Eigen
+if(CPP_STARTER_USE_EIGEN)
+    message("Using Eigen")
+    add_subdirectory(eigen)
+endif()
+
+# Matplotplusplus
+if(CPP_STARTER_USE_MATPLOT)
+    message("Using Matplotplusplus")
+    add_subdirectory(matplot)
+endif()
+
 
 # Generic test that uses conan libs
 add_executable(intro main.cpp)
