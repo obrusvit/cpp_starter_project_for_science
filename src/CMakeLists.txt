@@ -57,6 +57,13 @@ if(CPP_STARTER_USE_MATPLOT)
 endif()
 
 
+# Examples
+message("Compiling examples")
+# fixme how to make it in the matplot dir
+find_package(Matplot++ REQUIRED HINTS $ENV{MATPLOTPP_DIR})
+add_subdirectory(examples)
+
+
 # Generic test that uses conan libs
 add_executable(intro main.cpp)
 target_link_libraries(
